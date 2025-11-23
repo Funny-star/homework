@@ -1,0 +1,199 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+body{
+    background-color: white
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    color: blue;
+}
+
+.header::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.header li{
+    list-style: none;
+    width: 40px;
+    float: left;
+    margin-left: 20px;
+    font-size: 13px;
+    margin-top: 15px;
+}
+
+.header .more{
+    margin-right: 10px;
+    float: right;
+    width: 60px;
+}
+
+.header .more:hover{
+    background-color: #dddddd;
+}
+
+.header .more .function{
+    display: none;
+    width: 100px;
+    position: absolute;
+    right: 10px;
+    padding: 5px 5px;
+    border-radius: 4px;
+    box-shadow: 5px 5px 10px #b2b2b2;
+}
+
+.header .more .function img{
+    margin: 0 auto;
+    width: 44%;
+    display: inline-block;
+    margin-top: 10px;
+    border: 2px solid #b2b2b2;
+    border-radius: 4px;
+}
+
+.header .more .function img:hover{
+    border: 2px solid blue;
+}
+
+.header .more:hover .function{
+    display: block;
+}
+
+.logo{
+    width: 200px;
+    margin: 0 auto;
+    margin-top: 200px;
+}
+
+#logo-baidu{
+    width: 200px;
+}
+
+#form{
+    padding: 0 0 0 5px;
+    width: 800px;
+    height: 90px;
+    margin: auto;
+    margin-top: 1;
+    flex-direction: column;
+    border-radius: 10px;
+    border: 1.5px solid blue;
+    justify-content: center ;  
+}
+#form input{
+    border-radius: 10px;
+    width: 800px;
+    height: 40px;
+    border: 0 ;
+    font-size: 15px;
+    text-align: left;
+    outline: none;  
+        
+}
+.convenience-buttom{
+    gap: 17px;
+    width: 100%;
+    margin-left: 75%;
+    display: flex;
+    flex-direction: row;
+}
+#buttom1{
+    font-size: 15px;
+    color: aliceblue;
+    text-align: center;
+    line-height: 40px;
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: rgb(39, 1, 226);
+    border: none;
+    cursor: pointer;
+}
+    
+#bottom1 p:hover{
+    box-shadow: 10px 10px black;
+}
+    
+#buttom2 {
+    width: 20px;
+    height: 20px;
+    background-color: aliceblue;
+    border: 0;
+    margin-top: 15px;
+        
+}
+    
+#buttom2 img{
+    padding: 0;
+    width: 20px;
+    height: 20px;
+}
+    
+#buttom3 {
+    width: 20px;
+    height: 20px;
+    background-color: aliceblue;
+    border: 0;
+    margin-top: 15px;
+}
+    
+#buttom3 img{
+    padding: 0;
+    width: 20px;
+    height: 20px;
+}
+
+.hot-news{
+    display:flex ;
+    flex-direction: row;
+    padding: 0;
+    gap: 30px;
+    justify-content: center;
+    max-width: 800px;
+    margin: 70px auto;
+    gap: 300px;
+}
+
+.hot-news li{
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.hot-news1{
+    width: 25%;
+    list-style: none;
+    line-height: 50px;
+        
+}
+
+.hot-news2{
+    width: 25%;
+    list-style: none;
+    line-height: 50px;
+    margin-top: 4px;
+}
+
+#number-one{
+    font-size: 2em;
+    font-style: italic;
+    color: red;
+}
+
+#number-two{
+    font-size: 1.5em;
+    font-style: italic;
+    color: blue;
+}
