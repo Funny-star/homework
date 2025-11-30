@@ -67,3 +67,4 @@ function sum(array){
     return b;
 }
 console.log(sum(arr));
+
