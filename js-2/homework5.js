@@ -69,7 +69,7 @@
 // person1.foo4().call(person2)//箭头函数不会被call改变this指向，输出person1
 
 // lv3
-const a = {
+const a = {//课件写错了是不应该不是b吧。
   val: 1,
   b: { x: 10 },
   arr: [1, 2, 3]
