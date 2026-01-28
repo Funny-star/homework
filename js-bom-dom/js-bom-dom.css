@@ -45,7 +45,7 @@ form{
     padding: 10px;
 }
 
-li{
+#commentPart li{
     background-color: white;
     padding: 10px;
     margin: 10px;
@@ -78,4 +78,22 @@ li:hover{
     margin-left: 40px;
 }
 
+#contextmenu{
+    display: none; 
+    position: absolute;
+    width: 120px;
+    height: auto;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgb(150, 150, 150);
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    z-index: 1000;
+    text-align: center;
+}
+
+#delete, #report{
+    padding: 10px;
+    border-bottom: 1px solid rgb(200, 200, 200);
+}
 
