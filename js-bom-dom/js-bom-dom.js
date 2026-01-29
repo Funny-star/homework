@@ -30,82 +30,88 @@
 
 // lv2
 let number = 1;
+let situation = true;
 
 document.addEventListener('DOMContentLoaded', function () {
-    let comment = document.getElementById("comment")
-    let inputBox = document.getElementById("inputBox")
-    let commentPart = document.getElementById("commentPart")
-    comment.onclick = add
+    let comment = document.getElementById("comment");
+    let inputBox = document.getElementById("inputBox");
+    let commentPart = document.getElementById("commentPart");
+    comment.onclick = add;
     
-    let contextmenu = document.getElementById("contextmenu")
+    let contextmenu = document.getElementById("contextmenu");
     
     document.onclick = function() {
         if (contextmenu) {
-            contextmenu.style.display = "none"
+            contextmenu.style.display = "none";
         }
     }
 })
 
 function add() {
-    let textWord = inputBox.value
+    let textWord = inputBox.value;
     if (!textWord) {
-        alert("请输入评论")
+        alert("请输入评论");
         return;
     }
-    let commentPart = document.querySelector("#commentPart")
-    let newComment = document.createElement("li")
-    let head = document.createElement("img")
-    let name = document.createElement("p")
-    let commentText = document.createElement("p")
-    newComment.className = "comment"
-    head.className = "head"
-    head.src = "./1.jpg"
-    name.className = "name"
-    name.innerText = "USER-NAME"
-    commentText.className = "commentText"
-    commentText.innerText = inputBox.value
+    let commentPart = document.querySelector("#commentPart");
 
-     newComment.oncontextmenu = function(item) {
-        item.preventDefault()
-        console.log("右键点击了评论")
-        
-        let contextmenu = document.getElementById("contextmenu")
+    let newComment = document.createElement("li");
+    newComment.className = "comment";
+
+    let head = document.createElement("img");
+    head.className = "head";
+    head.src = "./1.jpg";
+
+    let name = document.createElement("p");
+    name.className = "name";
+    name.innerText = "USER-NAME";
+
+    let commentText = document.createElement("p");
+    commentText.className = "commentText";
+    commentText.innerText = inputBox.value;
+
+ 
+
+    newComment.oncontextmenu = function(item) {
+        let contextmenu = document.getElementById("contextmenu");
         if (contextmenu) {
-            contextmenu.style.display = "block"
-            contextmenu.style.left = item.pageX + "px"
-            contextmenu.style.top = item.pageY + "px"
+            contextmenu.style.display = "block";
+            contextmenu.style.left = item.pageX + "px";
+            contextmenu.style.top = item.pageY + "px";
             
-            let menuItems = contextmenu.querySelectorAll("li")
+            let menuItems = contextmenu.querySelectorAll("li");
             menuItems.forEach(function(menuItem) {
                 menuItem.onclick = function() {
                     if (this.textContent === "删除评论") {
-                        newComment.remove()
+                        newComment.remove();
                     }
                     if (this.textContent === "举报评论") {
-                        alert("已举报该评论")
+                        alert("已举报该评论");
+                        newComment.style.border = "2px solid red";
+                        situation = false;
+                        console.log(situation);
                     }
-                    contextmenu.style.display = "none"
+                    contextmenu.style.display = "none";
                 }
             })
         }
         return false
     }
-    commentPart.appendChild(newComment)
-    newComment.appendChild(head)
-    newComment.appendChild(name)
-    newComment.appendChild(commentText)
-    inputBox.value = ""
+    commentPart.appendChild(newComment);
+    newComment.appendChild(head);
+    newComment.appendChild(name);
+    newComment.appendChild(commentText);
+    inputBox.value = "";
 }
 window.oncontextmenu = function(item){
-    item.preventDefault()
-    return false
+    item.preventDefault();
+    return false;
 }
                          
-let comment = document.getElementsByClassName("comment")
-let contextmenu = document.getElementById("contextmenu")
-
+let comment = document.getElementsByClassName("comment");
+let contextmenu = document.getElementById("contextmenu");
 comment.oncontextmenu = function (item) {
-    console.log(1)
+    console.log(1);
 }
 
 
