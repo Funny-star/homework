@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网易云音乐 · 首页</title>
+    <!-- 无任何框架/库，纯原生实现。仅使用Font Awesome图标库辅助样式 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./wangyiyun.css">
+    <script src="./wangyiyun.js" defer></script>
+</head>
+
+<body>
+    <div class="app">
+        <!-- 头部 (已登录状态) -->
+        <header class="header">
+            <div class="logo-area">
+                <div class="logo"><i class="fab fa-netease-music"></i>网易云音乐</div>
+            </div>
+            <div class="user-area">
+                <!-- 添加搜索图标链接 -->
+                <i class="fas fa-search" onclick="location.href='search.html'" style="cursor: pointer; font-size: 20px; margin-right: 16px;"></i>
+                <span class="nickname">深海少女</span>
+                <div class="avatar" onclick="location.href='profile.html'" style="cursor: pointer;">
+                    <div class="avatar-placeholder">Y</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- 中间主体 -->
+        <div class="main-layout">
+            <!-- 侧边栏 -->
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <div class="sidebar-item active" onclick="location.href='index.html'"><i class="fas fa-music"></i> 发现音乐</div>
+                    <div class="sidebar-item" onclick="location.href='playlist-square.html'"><i class="fas fa-list"></i> 歌单广场</div>
+                    <div class="sidebar-item" onclick="location.href='ranking.html'"><i class="fas fa-chart-line"></i> 排行榜</div>
+                    <div class="sidebar-item" onclick="location.href='artist.html'"><i class="fas fa-user"></i> 歌手页</div>
+                </div>
+                <div class="sidebar-section favorite-music">
+                    <h3>我的音乐</h3>
+                    <div class="sidebar-item" onclick="location.href='favorite.html'"><i class="fas fa-heart" style="color:#c62f2f;"></i> 我喜欢的音乐</div>
+                    <div class="sidebar-item" onclick="location.href='my-playlists.html'"><i class="fas fa-headphones"></i> 我的歌单</div>
+                </div>
+            </aside>
+
+            <!-- 主内容区域 -->
+            <main class="content" id="main-content">
+                <!-- ========= 首页部分 ========= -->
+                <section id="home-section">
+                    <!-- 轮播图 -->
+                    <div class="carousel">
+                        <div class="carousel-container" id="carouselContainer">
+                            <div class="carousel-slide mock-img">轮播1 丨 广告</div>
+                            <div class="carousel-slide mock-img">轮播2 丨 新歌</div>
+                            <div class="carousel-slide mock-img">轮播3 丨 歌手</div>
+                        </div>
+                        <button class="carousel-btn left" id="carouselLeft"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-btn right" id="carouselRight"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-nav">
+                            <span class="carousel-dot active"></span>
+                            <span class="carousel-dot"></span>
+                            <span class="carousel-dot"></span>
+                        </div>
+                    </div>
+
+                    <!-- 推荐歌单 -->
+                    <div class="section-title">推荐歌单</div>
+                    <div class="card-grid">
+                        <div class="card" onclick="location.href='playlist-detail.html?id=1'">
+                            <div class="card-cover mock-img">
+                                <span class="play-count"><i class="fas fa-play-circle"></i> 245万</span>
+                            </div>
+                            <div class="card-info">
+                                <div class="card-title">经典摇滚 永远热泪盈眶</div>
+                            </div>
+                        </div>
+                        <div class="card" onclick="location.href='playlist-detail.html?id=2'">
+                            <div class="card-cover mock-img">
+                                <span class="play-count"><i class="fas fa-play-circle"></i> 130万</span>
+                            </div>
+                            <div class="card-info">
+                                <div class="card-title">学习歌单 · 深度专注</div>
+                            </div>
+                        </div>
+                        <div class="card" onclick="location.href='playlist-detail.html?id=3'">
+                            <div class="card-cover mock-img">
+                                <span class="play-count"><i class="fas fa-play-circle"></i> 89万</span>
+                            </div>
+                            <div class="card-info">
+                                <div class="card-title">R&B 氛围感</div>
+                            </div>
+                        </div>
+                        <div class="card" onclick="location.href='playlist-detail.html?id=4'">
+                            <div class="card-cover mock-img">
+                                <span class="play-count"><i class="fas fa-play-circle"></i> 56万</span>
+                            </div>
+                            <div class="card-info">
+                                <div class="card-title">电子音乐：迷幻夜晚</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 歌单广场 (简版，全部歌单预览) -->
+                    <div class="section-title">
+                        歌单广场 · 全部
+                        <span style="font-size: 14px; color: #aaa; margin-left: 16px; cursor: pointer;" onclick="location.href='playlist-square.html'">查看更多 <i class="fas fa-chevron-right"></i></span>
+                    </div>
+                    <div class="filter-bar">
+                        <span class="filter-tag active">全部</span>
+                        <span class="filter-tag">华语</span>
+                        <span class="filter-tag">流行</span>
+                        <span class="filter-tag">摇滚</span>
+                        <span class="filter-tag">电子</span>
+                        <span class="filter-tag">民谣</span>
+                    </div>
+                    <div class="card-grid">
+                        <div class="card" onclick="location.href='playlist-detail.html?id=5'">
+                            <div class="card-cover mock-img"><span class="play-count">12万</span></div>
+                            <div class="card-info">
+                                <div class="card-title">华语金曲100首</div>
+                            </div>
+                        </div>
+                        <div class="card" onclick="location.href='playlist-detail.html?id=6'">
+                            <div class="card-cover mock-img"><span class="play-count">8万</span></div>
+                            <div class="card-info">
+                                <div class="card-title">欧美热单</div>
+                            </div>
+                        </div>
+                        <div class="card" onclick="location.href='playlist-detail.html?id=7'">
+                            <div class="card-cover mock-img"><span class="play-count">3万</span></div>
+                            <div class="card-info">
+                                <div class="card-title">KPOP盛宴</div>
+                            </div>
+                        </div>
+                        <div class="card" onclick="location.href='playlist-detail.html?id=8'">
+                            <div class="card-cover mock-img"><span class="play-count">6万</span></div>
+                            <div class="card-info">
+                                <div class="card-title">ACG 动漫金曲</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 歌单详情模拟 (点击进入播放器) -->
+                    <div style="margin-top: 40px; border-top: 1px solid #333; padding-top: 24px;">
+                        <h2 style="margin-bottom: 16px;">歌单详情 · 示例</h2>
+                        <div class="playlist-header">
+                            <div class="playlist-cover mock-img">封面</div>
+                            <div class="playlist-info">
+                                <h2>【摇滚经典】迷墙与梦想</h2>
+                                <p><i class="fas fa-user"></i> 创建者：摇滚不死 · 歌曲数：68</p>
+                                <p style="color:#ccc;">简介：精选六七十年代到现代的摇滚代表作，从Pink Floyd到万能青年旅店。</p>
+                            </div>
+                        </div>
+                        <!-- 歌曲列表（点击可跳转到播放器） -->
+                        <table class="song-table">
+                            <tr onclick="location.href='player.html?song=1'">
+                                <td>1</td>
+                                <td>Bohemian Rhapsody</td>
+                                <td>Queen</td>
+                                <td>05:55</td>
+                            </tr>
+                            <tr onclick="location.href='player.html?song=2'">
+                                <td>2</td>
+                                <td>Kashmir</td>
+                                <td>Led Zeppelin</td>
+                                <td>08:28</td>
+                            </tr>
+                            <tr onclick="location.href='player.html?song=3'">
+                                <td>3</td>
+                                <td>不要停止我的音乐</td>
+                                <td>痛仰</td>
+                                <td>04:20</td>
+                            </tr>
+                            <tr onclick="location.href='player.html?song=4'">
+                                <td>4</td>
+                                <td>秦皇岛</td>
+                                <td>万能青年旅店</td>
+                                <td>07:50</td>
+                            </tr>
+                        </table>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- 底部播放栏 (点击可跳转到播放器详情页) -->
+        <footer class="player-bar" onclick="location.href='player.html'" style="cursor: pointer;">
+            <div class="player-current-info">
+                <div class="player-cover mock-img">封</div>
+                <div class="player-meta">
+                    <div class="song-name">Bohemian Rhapsody</div>
+                    <div class="artist">Queen</div>
+                </div>
+            </div>
+            <div class="player-controls">
+                <div class="control-buttons" onclick="event.stopPropagation()">
+                    <i class="fas fa-step-backward" onclick="changeSong(-1); event.stopPropagation()"></i>
+                    <i class="fas fa-play-circle" id="playBtn" onclick="togglePlay(); event.stopPropagation()"></i>
+                    <i class="fas fa-step-forward" onclick="changeSong(1); event.stopPropagation()"></i>
+                </div>
+                <div class="progress-area" onclick="event.stopPropagation()">
+                    <span class="time">1:35</span>
+                    <div class="progress-bar" onclick="updateProgress(event)">
+                        <div class="progress-current" style="width: 35%;"></div>
+                    </div>
+                    <span class="time">5:55</span>
+                </div>
+            </div>
+            <div class="volume-area" onclick="event.stopPropagation()">
+                <i class="fas fa-volume-up"></i>
+                <div class="volume-bar" onclick="updateVolume(event)">
+                    <div class="volume-fill" style="width: 70%;"></div>
+                </div>
+            </div>
+            <div class="lyric-preview">Is this the real life? Is this just fantasy?</div>
+        </footer>
+    </div>
+
+
+</body>
+
+</html>

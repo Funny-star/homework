@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>播放 - 网易云音乐</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="play.css">
+</head>
+<body>
+    <!-- 左侧导航栏 -->
+    <div class="sidebar">
+        <div class="logo-area">
+            <img src="https://via.placeholder.com/120x40/c20c0c/ffffff?text=网易云音乐" alt="Logo" class="logo">
+        </div>
+        
+        <ul class="nav-menu">
+            <li><i class="fas fa-home"></i> 发现</li>
+            <li><i class="fas fa-music"></i> 我的音乐</li>
+            <li><i class="fas fa-users"></i> 关注</li>
+            <li><i class="fas fa-store"></i> 商城</li>
+            <li><i class="fas fa-mobile-alt"></i> 下载客户端</li>
+        </ul>
+    </div>
+
+    <!-- 主内容区域 -->
+    <div class="main-content">
+        <!-- 顶部导航栏 -->
+        <div class="top-bar">
+            <div class="nav-tabs">
+                <span class="tab">个性推荐</span>
+                <span class="tab">歌单</span>
+                <span class="tab">主播电台</span>
+                <span class="tab">排行榜</span>
+                <span class="tab">歌手</span>
+                <span class="tab">最新音乐</span>
+            </div>
+            
+            <div class="user-area">
+                <div class="search-box" id="searchBox">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="搜索音乐、歌手、电台" readonly>
+                </div>
+                <div class="user-info">
+                    <img src="https://via.placeholder.com/32x32" alt="Avatar" class="avatar">
+                    <span class="username">游客</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 播放器主界面 -->
+        <div class="player-container">
+            <!-- 返回按钮 -->
+            <div class="back-nav">
+                <a href="javascript:history.back()" class="back-link">
+                    <i class="fas fa-arrow-left"></i> 返回
+                </a>
+            </div>
+
+            <!-- 专辑封面和基本信息 -->
+            <div class="player-main">
+                <div class="album-cover-container">
+                    <img src="" alt="专辑封面" class="album-cover" id="albumCover">
+                </div>
+                
+                <div class="song-info-container">
+                    <h1 class="song-title" id="songTitle">未知歌曲</h1>
+                    <div class="song-artist" id="songArtist">未知歌手</div>
+                    <div class="song-album" id="songAlbum">未知专辑</div>
+                    
+                    <!-- 播放控制按钮 -->
+                    <div class="player-controls-large">
+                        <button class="control-btn" id="prevBtn"><i class="fas fa-step-backward"></i></button>
+                        <button class="control-btn play-pause" id="playPauseBtn"><i class="fas fa-play-circle"></i></button>
+                        <button class="control-btn" id="nextBtn"><i class="fas fa-step-forward"></i></button>
+                    </div>
+                    
+                    <!-- 进度条 -->
+                    <div class="progress-container-large">
+                        <span class="current-time" id="currentTime">0:00</span>
+                        <div class="progress-bar-large" id="progressBar">
+                            <div class="progress-fill-large" id="progressFill"></div>
+                        </div>
+                        <span class="total-time" id="totalTime">0:00</span>
+                    </div>
+                    
+                    <!-- 其他控制按钮 -->
+                    <div class="extra-controls">
+                        <button class="extra-btn" id="likeBtn"><i class="far fa-heart"></i></button>
+                        <button class="extra-btn" id="downloadBtn"><i class="fas fa-download"></i></button>
+                        <button class="extra-btn" id="shareBtn"><i class="fas fa-share-alt"></i></button>
+                        <button class="extra-btn" id="loopBtn"><i class="fas fa-redo-alt"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 歌词区域 -->
+            <div class="lyrics-container">
+                <h3 class="lyrics-title">歌词</h3>
+                <div class="lyrics-content" id="lyricsContent">
+                    <p class="lyric-line">暂无歌词</p>
+                </div>
+            </div>
+
+            <!-- 相关推荐 -->
+            <div class="recommend-section">
+                <h3>相关推荐</h3>
+                <div class="recommend-list" id="recommendList">
+                    <!-- 相关推荐会动态加载 -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="play.js"></script>
+</body>
+</html>
