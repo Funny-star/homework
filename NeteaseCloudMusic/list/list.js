@@ -736,7 +736,8 @@ class CommentManager {
         container.innerHTML = comments.map(comment => {
             const time = new Date(comment.time).toLocaleString()
             return `
-                <div class="comment-item">
+                <div class="comment-it+
+                em">
                     <img src="${comment.user.avatarUrl}" alt="${comment.user.nickname}" class="comment-avatar">
                     <div class="comment-content">
                         <div class="comment-header">
