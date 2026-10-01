@@ -1,0 +1,193 @@
+/* modern-reset.css */
+:root {
+  /* 自定义变量，可以根据需要修改 */
+  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+/* 使用更具体的选择器，避免影响所有元素 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 设置基础 HTML5 元素为块级 */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* 重置 body */
+body {
+  line-height: 1.5;
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+}
+
+/* 重置媒体元素 */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 重置表单元素 */
+input, button, textarea, select {
+  font: inherit;
+  color: inherit;
+  border: 1px solid transparent;
+  background: transparent;
+}
+
+/* 移除按钮默认样式 */
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* 重置列表 */
+ul, ol {
+  list-style: none;
+}
+
+/* 重置链接 */
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* 重置标题 */
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+  overflow-wrap: break-word;
+}
+
+/* 重置引用 */
+blockquote, q {
+  quotes: none;
+}
+
+blockquote::before, blockquote::after,
+q::before, q::after {
+  content: '';
+  content: none;
+}
+
+/* 重置表格 */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 重置水平线 */
+hr {
+  border: none;
+  border-top: 1px solid;
+  height: 0;
+  overflow: visible;
+}
+
+/* 移除 abbr 的下划线 */
+abbr[title] {
+  text-decoration: none;
+  border-bottom: 1px dotted;
+}
+
+/* 重置代码样式 */
+code, kbd, pre, samp {
+  font-family: monospace;
+  font-size: inherit;
+}
+
+/* 重置小号字体 */
+small {
+  font-size: 0.875em;
+}
+
+/* 重置子脚本和上标 */
+sub, sup {
+  font-size: 0.75em;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* 移除 Firefox 中按钮的内部边框 */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/* 重置进度条 */
+progress {
+  vertical-align: baseline;
+}
+
+/* 移除 IE 中多余的填充 */
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/* 修正搜索框的样式 */
+[type="search"] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/* 重置数字输入框的微调按钮 */
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/* 重置文件上传按钮 */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+/* 移除详情标记的默认样式 */
+details {
+  display: block;
+}
+
+summary {
+  display: list-item;
+}
+
+/* 重置模板元素 */
+template {
+  display: none;
+}
+
+/* 重置隐藏属性 */
+[hidden] {
+  display: none !important;
+}

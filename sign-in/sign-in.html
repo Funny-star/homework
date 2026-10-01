@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="./sign-in.css">
+<body>
+    <div class="sign-in">
+        <div class="header">
+            <div class="qr-box-out">
+                <div class="qr-box"></div>
+                <img class="qr" src="resourse-sign-in/705601D276B5D29A7E1373DCE5E0072F.png">
+            </div>
+            <div class="esc">X</div>
+        </div>
+        <img class="logo" src="resourse-sign-in/175D2B034AB4FAE76F330F7FFDC7E7BB.png" alt="logo">
+        <div class="input">
+            <div class="input-top">
+                <div class="choose">
+                    <img src="resourse-sign-in/6CB346191F99F78410742A804C81D070.png">
+                    <div class="number">+86</div>
+                    <div class="triangle-down">
+                        <ul class="number-list">
+                            <li>+86</li>
+                            <li>+87</li>
+                            <li>+88</li>
+                            <li>+89</li>
+                        </ul>
+                    </div>
+                </div>
+                <form id="form-1" action="/submit" method="post">
+                    <input type="text" id="phone-number"  placeholder="请输入手机号"  name="phone-number">
+                </form>
+                <form id="form-2" action="/submit" method="post">
+                    <input type="text" id="password"  placeholder="请输入密码"  name="password">
+                </form>
+            </div>
+                <form id="al" action="/submit" method="post">
+                    <input type="checkbox" id="auto-login" name="auto-login" >
+                    <label for="auto-login">自动登录</label>
+                </form>
+                <a id="forget" href="#">忘记密码</a>
+                <a id="vcl" href="#">验证码登录</a>
+        </div>
+        <div class="button-part">
+            <button id="sign-in-button">
+                <p>登 录</p>
+            </button>
+        </div>
+        <div class="sign-up">
+            <a id="sign-up-button" href="#">注册</a>
+        </div>
+        <div class="other-sign-in">
+            <ul>
+                <li> 
+                    <a href="#">
+                        <img src="resourse-sign-in/1D2D7C04EF2A92E2D0BA41AC11702FAD.png" alt="">
+                    </a>
+                </li>
+                <li> 
+                    <a href="#">
+                        <img src="resourse-sign-in/CBF00F3E0F85CF362179758181965402.png" alt="">
+                    </a>
+                </li>
+                <li> 
+                    <a href="#">
+                        <img src="resourse-sign-in/8CF11CB349F04A85F63EBD78C304328C.png" alt="">   
+                    </a>
+                </li>
+                <li> 
+                    <a href="#">
+                        <img src="resourse-sign-in/F19D1A7A66AED84FDC086EA2875181C5.png" alt="">
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <form id="footer" action="/submit" method="post">
+            <input type="checkbox" id="agreement" name="agreement"> 
+            <p>登录即表示同意<a href="#">《用户协议》</a>和<a href="#">《隐私政策》</a>
+        </form>
+            
+    </div>
+</body>
+</html>

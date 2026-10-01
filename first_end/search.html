@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网易云音乐 · 搜索</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./wangyiyun.css">
+    <script src="./wangyiyun.js" defer></script>
+</head>
+<body>
+    <div class="app">
+        <!-- 头部 (可以简化或保留) -->
+        <header class="header">
+            <div class="logo-area">
+                <div class="logo"><i class="fab fa-netease-music"></i>网易云音乐</div>
+            </div>
+            <div class="user-area">
+                <span class="nickname">深海少女</span>
+                <div class="avatar">
+                    <div class="avatar-placeholder">Y</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- 中间主体 -->
+        <div class="main-layout">
+            <!-- 侧边栏 (可选，可以保留以便导航) -->
+            <aside class="sidebar">
+                <!-- ... 和首页相同的侧边栏 ... -->
+            </aside>
+
+            <!-- 主内容区域 - 搜索界面 -->
+            <main class="content">
+                <!-- ========= 搜索界面 ========= -->
+                <section id="search-section">
+                    <!-- 搜索框区域 -->
+                    <div class="search-header">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="searchInput" placeholder="搜索音乐、歌手、专辑..." autocomplete="off">
+                            <button class="search-clear" style="display: none;"><i class="fas fa-times-circle"></i></button>
+                        </div>
+                        <button class="search-cancel" onclick="goBack()">取消</button>
+                    </div>
+
+                    <!-- 搜索建议/默认搜索词 -->
+                    <div class="search-suggestions" id="searchSuggestions">
+                        <div class="suggestion-title">热门搜索</div>
+                        <div class="hot-searches">
+                            <!-- 热搜1 热搜2 热搜3 热搜4 热搜5 -->
+                        </div>
+
+                        <!-- 搜索历史 -->
+                        <div class="search-history">
+                            <div class="history-header">
+                                <span class="suggestion-title">搜索历史</span>
+                                <span class="clear-history"><i class="fas fa-trash-alt"></i> 清除</span>
+                            </div>
+                            <div class="history-list"> 
+                                <!-- 历史记录 -->
+                            </div>
+                        </div>
+
+                        <!-- 默认搜索词 -->
+                        <div class="default-search">
+                            <span class="suggestion-title">默认搜索</span>
+                            <div class="default-tag">海阔天空</div>
+                        </div>
+                    </div>
+
+                    <!-- 搜索结果 (有搜索词时显示) -->
+                    <div class="search-results" id="searchResults" style="display: none;">
+                        <!-- 搜索结果分类标签 -->
+                        <div class="result-tabs">
+                            <span class="result-tab active">单曲</span>
+                            <span class="result-tab">歌手</span>
+                            <span class="result-tab">专辑</span>
+                            <span class="result-tab">歌单</span>
+                        </div>
+
+                        <!-- 单曲搜索结果 -->
+                        <div class="result-list" id="songResults">
+                            <div class="result-item">
+                                <div class="result-index">1</div>
+                                <div class="result-cover mock-img"></div>
+                                <div class="result-info">
+                                    <div class="result-name">海阔天空 <span class="result-artist">- Beyond</span></div>
+                                    <div class="result-album">专辑：乐与怒</div>
+                                </div>
+                                <div class="result-duration">05:24</div>
+                                <div class="result-actions">
+                                    <i class="fas fa-play"></i>
+                                    <i class="fas fa-plus"></i>
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                            </div>
+                            <div class="result-item">
+                                <div class="result-index">2</div>
+                                <div class="result-cover mock-img"></div>
+                                <div class="result-info">
+                                    <div class="result-name">光辉岁月 <span class="result-artist">- Beyond</span></div>
+                                    <div class="result-album">专辑：光辉岁月</div>
+                                </div>
+                                <div class="result-duration">04:58</div>
+                                <div class="result-actions">
+                                    <i class="fas fa-play"></i>
+                                    <i class="fas fa-plus"></i>
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                            </div>
+                            <!-- 更多搜索结果... -->
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- 底部播放栏 (保持不变) -->
+        <footer class="player-bar">
+            <!-- ... -->
+        </footer>
+    </div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

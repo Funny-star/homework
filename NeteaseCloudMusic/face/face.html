@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网易云音乐 - 仿界面</title>
+    <!-- 重置样式 -->
+    <link rel="stylesheet" href="../reset.css">
+    <!-- 自定义样式 -->
+    <link rel="stylesheet" href="./face.css">
+    <!-- 字体图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- 左侧导航栏 -->
+    <div class="sidebar">
+        <!-- Logo区域 -->
+        <div class="logo-area">
+            <img src="https://s1.music.126.net/style/web/img/logo.png" alt="网易云音乐" class="logo">
+        </div>
+
+        <!-- 主导航 -->
+        <ul class="nav-menu">
+            <li class="active"><i class="fas fa-music"></i> 推荐</li>
+            <li><i class="fas fa-compass"></i> 精选</li>
+            <li><i class="fas fa-list"></i> 歌单广场</li>
+            <li><i class="fas fa-chart-bar"></i> 排行榜</li>
+            <li><i class="fas fa-microphone"></i> 歌手</li>
+            <li><i class="fas fa-crown"></i> VIP</li>
+        </ul>
+
+        <!-- 我的音乐 -->
+        <div class="section-title">
+            <span>我的音乐</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <ul class="sub-menu">
+            <li><i class="fas fa-heart"></i> 我喜欢的音乐</li>
+            <li><i class="fas fa-history"></i> 最近播放</li>
+            <li><i class="fas fa-download"></i> 下载管理</li>
+            <li><i class="fas fa-cloud"></i> 我的音乐网盘</li>
+            <li><i class="fas fa-podcast"></i> 我的播客</li>
+            <li><i class="fas fa-star"></i> 我的收藏</li>
+        </ul>
+
+        <!-- 创建的歌单 -->
+        <div class="section-title">
+            <span>创建的歌单 <span class="count">(12)</span></span>
+            <i class="fas fa-plus"></i>
+        </div>
+        <ul class="playlist-menu" id="playlistContainer">
+            <!-- 歌单数据通过JS动态加载 -->
+            <!-- API: GET /user/playlist?uid={uid} -->
+            <li>华语慢情歌</li>
+            <li>起重回2014</li>
+            <li>色的梦</li>
+            <li>就今晚</li>
+        </ul>
+    </div>
+
+    <!-- 主内容区域 -->
+    <div class="main-content">
+        <!-- 顶部导航栏 -->
+        <div class="top-bar">
+            <div class="nav-tabs">
+                <span class="tab active">精选</span>
+                <span class="tab">推荐</span>
+                <span class="tab">官方</span>
+                <span class="tab">华语</span>
+                <span class="tab">摇滚</span>
+                <span class="tab">民谣</span>
+                <span class="tab">电子</span>
+                <span class="tab">轻音乐</span>
+                <span class="tab more">更多分类 <i class="fas fa-chevron-down"></i></span>
+            </div>
+
+            <div class="user-area">
+                <!-- 搜索框 -->
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="搜索音乐、歌手、电台" id="searchInput">
+                </div>
+
+                <!-- 用户信息 -->
+                <div class="user-info" id="userInfo">
+                    <img src="https://via.placeholder.com/32x32" alt="用户头像" class="avatar">
+                    <span class="username">游客</span>
+                    <!-- 用户数据: GET /user/detail?uid={uid} -->
+                </div>
+
+                <!-- 主题切换 -->
+                <button class="theme-btn">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- 内容区域 -->
+        <div class="content">
+            <!-- 推荐歌单 -->
+            <section class="section">
+                <div class="section-header">
+                    <h2>推荐歌单</h2>
+                    <a href="#" class="more-link">更多 <i class="fas fa-arrow-right"></i></a>
+                    <!-- 跳转链接: /playlist -->
+                </div>
+                <div class="card-grid" id="recommendPlaylists">
+                    <!-- 推荐歌单数据: GET /personalized?limit=6 -->
+                    <div class="card" data-id="3994.3万">
+                        <div class="card-cover">
+                            <img alt="歌单封面">
+                            <span class="play-count"><i class="fas fa-play"></i> </span>
+                        </div>
+                        <div class="card-info">
+                            <p class="card-title"></p>
+                        </div>
+                    </div>
+                    <div class="card" data-id="10.7万">
+                        <div class="card-cover">
+                            <img alt="歌单封面">
+                            <span class="play-count"><i class="fas fa-play"></i></span>
+                        </div>
+                        <div class="card-info">
+                            <p class="card-title"></p>
+                        </div>
+                    </div>
+                    <div class="card" data-id="104.1万">
+                        <div class="card-cover">
+                            <img alt="歌单封面">
+                            <span class="play-count"><i class="fas fa-play"></i></span>
+                        </div>
+                        <div class="card-info">
+                            <p class="card-title"></p>
+                        </div>
+                    </div>
+                    <div class="card" data-id="97159">
+                        <div class="card-cover">
+                            <img alt="歌单封面">
+                            <span class="play-count"><i class="fas fa-play"></i></span>
+                        </div>
+                        <div class="card-info">
+                            <p class="card-title"></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 推荐播客 -->
+            <section class="section">
+                <div class="section-header">
+                    <h2>推荐播客</h2>
+                    <a href="#" class="more-link">更多 <i class="fas fa-arrow-right"></i></a>
+                    <!-- 跳转链接: /podcast -->
+                </div>
+                <div class="card-grid" id="recommendPodcasts">
+                    <!-- 播客数据: GET /personalized/djprogram -->
+                    <div class="card" data-id="17.8万">
+                        <div class="card-cover">
+                            <img src="https://via.placeholder.com/200x200" alt="播客封面">
+                            <span class="play-count"><i class="fas fa-headphones"></i></span>
+                        </div>
+                        <div class="card-info">
+                            <p class="card-title"></p>
+                            <p class="card-desc"></p>
+                        </div>
+                    </div>
+                    <div class="card" data-id="40.8万">
+                        <div class="card-cover">
+                            <img src="https://via.placeholder.com/200x200" alt="播客封面">
+                            <span class="play-count"><i class="fas fa-headphones"></i></span>
+                        </div>
+                        <div class="card-info">
+                            <p class="card-title"></p>
+                            <p class="card-desc"></p>
+                        </div>
+                    </div>
+                    <div class="card" data-id="28.6万">
+                        <div class="card-cover">
+                            <img src="https://via.placeholder.com/200x200" alt="播客封面">
+                            <span class="play-count"><i class="fas fa-headphones"></i></span>
+                        </div>
+                        <div class="card-info">
+                            <p class="card-title"></p>
+                            <p class="card-desc"></p>
+                        </div>
+                    </div>
+                    <div class="card" data-id="25862">
+                        <div class="card-cover">
+                            <img src="https://via.placeholder.com/200x200" alt="播客封面">
+                            <span class="play-count"><i class="fas fa-headphones"></i></span>
+                        </div>
+                        <div class="card-info">
+                            <p class="card-title"></p>
+                            <p class="card-desc"></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 热门活动 -->
+            <section class="section" id="activity">
+                <div class="section-header">
+                    <h2>热门活动</h2>
+                    <a href="/activities" class="more-link">更多 <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- 轮播图区域 -->
+                <div class="carousel-container">
+                    <div class="carousel-track" id="activityCarousel">
+                        <!-- 轮播项会通过JavaScript动态生成 -->
+                    </div>
+
+                    <!-- 轮播控制按钮 -->
+                    <button class="carousel-btn prev-btn" id="prevActivity">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn next-btn" id="nextActivity">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+
+                    <!-- 指示点 -->
+                    <div class="carousel-dots" id="activityDots"></div>
+                </div>
+            </section>
+
+            <!-- 特色榜单 -->
+            <section class="section" id="featuredCharts">
+                <div class="section-header">
+                    <h2>特色榜单</h2>
+                    <a href="#" class="more-link">更多 <i class="fas fa-arrow-right"></i></a>
+                    <!-- 跳转链接: /toplist -->
+                </div>
+                <div class="chart-grid" id="chartsContainer">
+                    <!-- 榜单数据: GET /toplist -->
+
+                </div>
+           
+
+    <!-- 底部播放器 -->
+    <div class="player-bar">
+        <div class="player-left">
+            <img src="https://via.placeholder.com/56x56" alt="当前播放" class="current-song-cover">
+            <div class="current-song-info">
+                <p class="current-song-name">还是会想你</p>
+                <p class="current-song-artist">歌手名</p>
+            </div>
+            <i class="fas fa-heart"></i>
+            <i class="fas fa-download"></i>
+        </div>
+
+        <div class="player-center">
+            <div class="player-controls">
+                <i class="fas fa-random"></i>
+                <i class="fas fa-step-backward"></i>
+                <i class="fas fa-play-circle"></i>
+                <i class="fas fa-step-forward"></i>
+                <i class="fas fa-redo-alt"></i>
+            </div>
+            <div class="progress-container">
+                <span class="current-time">00:00</span>
+                <div class="progress-bar-bg">
+                    <div class="progress-fill" style="width: 30%"></div>
+                </div>
+                <span class="total-time">04:32</span>
+            </div>
+        </div>
+
+        <div class="player-right">
+            <i class="fas fa-list"></i>
+            <i class="fas fa-volume-up"></i>
+            <div class="volume-bar">
+                <div class="progress-bar-bg">
+                    <div class="progress-fill" style="width: 70%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="face.js"></script>
+</body>
+
+</html>

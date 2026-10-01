@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>搜索 - 网易云音乐</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="search.css">
+</head>
+<body>
+    <!-- 左侧导航栏 -->
+    <div class="sidebar">
+        <div class="logo-area">
+            <img src="https://via.placeholder.com/120x40/c20c0c/ffffff?text=网易云音乐" alt="Logo" class="logo">
+        </div>
+        
+        <ul class="nav-menu">
+            <li><i class="fas fa-home"></i> 发现</li>
+            <li><i class="fas fa-music"></i> 我的音乐</li>
+            <li><i class="fas fa-users"></i> 关注</li>
+            <li><i class="fas fa-store"></i> 商城</li>
+            <li><i class="fas fa-mobile-alt"></i> 下载客户端</li>
+        </ul>
+
+        <div class="section-title">
+            <span>我的歌单</span>
+            <i class="fas fa-plus"></i>
+        </div>
+        <ul class="playlist-menu">
+            <li><i class="fas fa-heart" style="color: #c20c0c;"></i> 我喜欢的音乐</li>
+            <li><i class="fas fa-music"></i> 私人雷达</li>
+            <li><i class="fas fa-headphones"></i> 每日推荐</li>
+        </ul>
+    </div>
+
+    <!-- 主内容区域 -->
+    <div class="main-content">
+        <!-- 顶部导航栏 -->
+        <div class="top-bar">
+            <div class="nav-tabs">
+                <span class="tab">个性推荐</span>
+                <span class="tab">歌单</span>
+                <span class="tab">主播电台</span>
+                <span class="tab">排行榜</span>
+                <span class="tab">歌手</span>
+                <span class="tab">最新音乐</span>
+                <span class="tab more">更多 <i class="fas fa-chevron-down"></i></span>
+            </div>
+            
+            <div class="user-area">
+                <div class="search-box" id="searchBox">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="搜索音乐、歌手、电台" id="searchInput">
+                </div>
+                <div class="user-info">
+                    <img src="https://via.placeholder.com/32x32" alt="Avatar" class="avatar">
+                    <span class="username">游客</span>
+                </div>
+                <button class="theme-btn"><i class="fas fa-moon"></i></button>
+            </div>
+        </div>
+
+        <!-- 内容区域 -->
+        <div class="content">
+            <!-- 返回按钮 -->
+            <div class="back-nav">
+                <a href="face.html" class="back-link">
+                    <i class="fas fa-arrow-left"></i> 返回首页
+                </a>
+            </div>
+
+            <!-- 搜索头部 -->
+            <div class="search-header">
+                <h1 class="search-title">搜索</h1>
+                <div class="search-input-large">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="输入关键词搜索音乐、歌手、专辑..." id="largeSearchInput">
+                    <button class="search-btn" id="searchBtn">搜索</button>
+                </div>
+            </div>
+
+            <!-- 搜索分类标签 -->
+            <div class="search-tabs">
+                <span class="search-tab active" data-type="song">歌曲</span>
+                <span class="search-tab" data-type="playlist">歌单</span>
+                <span class="search-tab" data-type="artist">歌手</span>
+                <span class="search-tab" data-type="album">专辑</span>
+                <span class="search-tab" data-type="podcast">播客</span>
+            </div>
+
+            <!-- 搜索结果区域 -->
+            <div class="search-results" id="searchResults">
+                <!-- 搜索结果会动态加载 -->
+            </div>
+
+            <!-- 搜索历史 -->
+            <div class="search-history" id="searchHistory">
+                <div class="history-header">
+                    <h3>最近搜索</h3>
+                    <span class="clear-history" id="clearHistory"><i class="far fa-trash-alt"></i> 清空</span>
+                </div>
+                <div class="history-tags" id="historyTags">
+                    <!-- 历史标签会动态加载 -->
+                </div>
+            </div>
+
+            <!-- 热门搜索 -->
+            <div class="hot-search">
+                <h3>热门搜索</h3>
+                <div class="hot-tags" id="hotTags">
+                    <!-- 热门标签会动态加载 -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部播放器（简化版，不显示具体歌曲） -->
+    <div class="player-bar">
+        <div class="player-left">
+            <img src="https://via.placeholder.com/56x56" alt="Current Song" class="current-song-cover">
+            <div class="current-song-info">
+                <div class="current-song-name">未播放</div>
+                <div class="current-song-artist">选择一首歌曲开始播放</div>
+            </div>
+            <i class="far fa-heart"></i>
+            <i class="fas fa-download"></i>
+        </div>
+        
+        <div class="player-center">
+            <div class="player-controls">
+                <i class="fas fa-random"></i>
+                <i class="fas fa-step-backward"></i>
+                <i class="fas fa-play-circle"></i>
+                <i class="fas fa-step-forward"></i>
+                <i class="fas fa-redo-alt"></i>
+            </div>
+            <div class="progress-container">
+                <span class="current-time">0:00</span>
+                <div class="progress-bar-bg">
+                    <div class="progress-fill" style="width: 0%"></div>
+                </div>
+                <span class="total-time">0:00</span>
+            </div>
+        </div>
+        
+        <div class="player-right">
+            <i class="fas fa-list-ul"></i>
+            <i class="fas fa-volume-up"></i>
+            <div class="volume-bar">
+                <div class="progress-bar-bg">
+                    <div class="progress-fill" style="width: 70%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="search.js"></script>
+</body>
+</html>
